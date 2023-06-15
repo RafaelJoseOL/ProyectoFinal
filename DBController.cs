@@ -146,7 +146,7 @@ public class DBController : MonoBehaviour {
 
     public async void ErrorMsg (string error) {
         await Task.Delay(2500);
-        if (!logged) {
+        if (!logged && SceneManager.GetActiveScene().name == "MainMenu") {
             messageText.GetComponent<TextMeshProUGUI>().text = error;
             messagePanel.SetActive(true);
         }
